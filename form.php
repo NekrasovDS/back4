@@ -23,12 +23,13 @@ if (!empty($messages)) {
   print('</div>');
 }
 
-
 ?>
     <form action="" method="POST">
      <p> Форма и Cookie </p>
  <p> Введите Ваше имя <br>
       <input name="fio" <?php if ($errors['fio']) {print 'class="error"';} ?> value="<?php print $values['fio']; ?>" />
+   
+   
  <p> Укажите год своего рождения <br>
         <select name="year" <?php if ($errors['year']) {print 'class="error"';} ?>>
     <?php 
@@ -45,9 +46,13 @@ if (!empty($messages)) {
         }
     }?>
   </select>
+   
+   
   <p> Введите свою почту <br>
   <input name="email" <?php if ($errors['email']) {print 'class="error"';} ?> value="<?php print $values['email']; ?>" />
   </p>
+      
+      
   <p> Укажите Ваш пол <br>
   <INPUT name="gender" <?php if ($errors['gender']) {print 'class="error"';}?>
   <?php if ($values['gender'] == 'm') {print 'checked'; }?> type="radio" value="m">
@@ -56,6 +61,8 @@ if (!empty($messages)) {
 <?php if ($values['gender'] == 'j') {print 'checked'; }?> type="radio" value="j">
 Ж
 </p>
+    
+    
   <p> Какую суперсилу вы хотите/имеете? <br>
   <select name="superpower" <?php if ($errors['superpower']) {print 'class="error"';} ?> size="1">
   <option value="I" <?php if ($values['superpower'] == 'I') {print 'selected'; }?>>Бессмертие</option>
@@ -66,25 +73,28 @@ if (!empty($messages)) {
 
 
 <p>Сколько у Вас конечностей?<br>
-<INPUT name="limbs" <?php if ($errors['limbs']) {print 'class="error"';} ?> <?php if ($values['limbs'] == '0') {print 'checked'; }?> type="radio" value="0">
+<INPUT name="limbs" <?php if ($errors['limbs']) {print 'class="error"';} ?> 
+<?php if ($values['limbs'] == '0') {print 'checked'; }?> type="radio" value="0">
 0
-<INPUT name="limbs" <?php if ($errors['limbs']) {print 'class="error"';} ?> <?php if ($values['limbs'] == '1') {print 'checked'; }?>  type="radio" value="1">
+<INPUT name="limbs" <?php if ($errors['limbs']) {print 'class="error"';} ?> 
+<?php if ($values['limbs'] == '1') {print 'checked'; }?>  type="radio" value="1">
 1
-<INPUT name="limbs" <?php if ($errors['limbs']) {print 'class="error"';} ?> <?php if ($values['limbs'] == '2') {print 'checked'; }?>  type="radio" value="2">
+<INPUT name="limbs" <?php if ($errors['limbs']) {print 'class="error"';} ?> 
+<?php if ($values['limbs'] == '2') {print 'checked'; }?>  type="radio" value="2">
 2
-<INPUT name="limbs" <?php if ($errors['limbs']) {print 'class="error"';} ?> <?php if ($values['limbs'] == '3') {print 'checked'; }?>  type="radio" value="3">
+<INPUT name="limbs" <?php if ($errors['limbs']) {print 'class="error"';} ?> 
+<?php if ($values['limbs'] == '3') {print 'checked'; }?>  type="radio" value="3">
 3
-<INPUT name="limbs" <?php if ($errors['limbs']) {print 'class="error"';} ?> <?php if ($values['limbs'] == '4') {print 'checked'; }?>  type="radio" value="4">
+<INPUT name="limbs" <?php if ($errors['limbs']) {print 'class="error"';} ?> 
+<?php if ($values['limbs'] == '4') {print 'checked'; }?>  type="radio" value="4">
 4
 </p>
 <INPUT type="bio" <?php if ($errors['bio']) {print 'class="error"';} ?> value="<?php print $values['bio']; ?>" name="bio" size="100" maxlength="100">
 <div class="checkbox <?php if ($errors['check']) {print 'error';} ?> ">
-                <input type="checkbox" name="check" <?php if($values['check']==TRUE){print 'checked';} ?>/> С пользовательским соглашением ознакомлен(а)
-            </div>
-<p>
-  <input type="submit" value="ok" />
+                <input type="checkbox" name="check" <?php if($values['check']==TRUE){print 'checked';} ?>/> С пользовательским соглашением ознакомлен(а)</div>
   
-</p>
+  
+<p><input type="submit" value="ok" /></p>
     </form>
   </body>
 </html>
